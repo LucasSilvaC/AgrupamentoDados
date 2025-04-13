@@ -72,3 +72,41 @@ INSERT INTO grill_consumo (funcionario_id, grill_id, data_consumo) VALUES
 
 (5, 5, '2025-04-03'),
 (5, 2, '2025-04-07');
+
+(6, 3, '2025-04-05'),
+(6, 1, '2025-04-08'),
+(6, 5, '2025-04-11'),
+
+(7, 2, '2025-04-04'),
+(7, 2, '2025-04-05'),
+
+(8, 4, '2025-04-03'),
+(8, 5, '2025-04-07'),
+
+(9, 1, '2025-04-01'),
+(9, 3, '2025-04-02'),
+(9, 4, '2025-04-05'),
+
+(10, 5, '2025-04-04'),
+
+(11, 3, '2025-04-06'),
+(11, 1, '2025-04-07'),
+
+(12, 2, '2025-04-08'),
+(12, 2, '2025-04-10'),
+
+(13, 1, '2025-04-03'),
+(13, 5, '2025-04-05'),
+
+(14, 4, '2025-04-02'),
+(14, 3, '2025-04-04'),
+
+(15, 2, '2025-04-01'),
+(15, 2, '2025-04-06'),
+(15, 2, '2025-04-11');
+
+-- Inner Join para ver a pessoa e o que ela consumiu
+SELECT nome, descricao, data_consumo, valor
+FROM grill_consumo
+INNER JOIN funcionarios ON grill_consumo.funcionario_id = funcionarios.id
+INNER JOIN grill ON grill_consumo.grill_id = grill.id;
